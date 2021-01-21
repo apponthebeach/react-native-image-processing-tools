@@ -9,8 +9,10 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, Image } from 'react-native';
 import ImageProcessingTools from 'react-native-image-processing-tools';
+
+const imageUrl = 'https://images.unsplash.com/photo-1536602295863-59cf052c35f5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2636&q=80';
 
 export default class App extends Component<{}> {
   state = {
@@ -18,7 +20,7 @@ export default class App extends Component<{}> {
     message: '--'
   };
   componentDidMount() {
-    ImageProcessingTools.sampleMethod('Testing', 123, (message) => {
+    ImageProcessingTools.sampleMethod('Testing', 256, (message) => {
       this.setState({
         status: 'native callback received',
         message
@@ -28,8 +30,8 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>☆ImageProcessingTools example☆</Text>
-        <Text style={styles.instructions}>STATUS: {this.state.status}</Text>
+        <Text style={styles.welcome}>Original Image</Text>
+        <Image source={{url:imageUrl}} style={{width:320, height:191}} />
         <Text style={styles.welcome}>☆NATIVE CALLBACK MESSAGE☆</Text>
         <Text style={styles.instructions}>{this.state.message}</Text>
       </View>

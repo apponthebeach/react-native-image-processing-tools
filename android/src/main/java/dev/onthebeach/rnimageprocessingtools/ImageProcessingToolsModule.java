@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package dev.onthebeach.rnimageprocessingtools;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -22,6 +22,7 @@ public class ImageProcessingToolsModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
         // TODO: Implement some actually useful functionality
-        callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
+        int newNumberArgument = numberArgument + 1;
+        callback.invoke("Received numberArgument: " + newNumberArgument + " stringArgument: " + stringArgument);
     }
 }

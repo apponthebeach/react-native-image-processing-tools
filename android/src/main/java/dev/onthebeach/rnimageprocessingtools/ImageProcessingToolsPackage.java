@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package dev.onthebeach.rnimageprocessingtools;
 
 import java.util.Arrays;
 import java.util.Collections;

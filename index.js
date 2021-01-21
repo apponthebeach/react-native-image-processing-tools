@@ -1,5 +1,2 @@
-import { NativeModules } from 'react-native';
-
-const { ImageProcessingTools } = NativeModules;
-
+import ImageProcessingTools from './lib/imageProcessingTools';
 export default ImageProcessingTools;
